@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login</title>
+    <style>
+   /* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Full screen background image */
+body, html {
+    height: 100%;
+}
+
+/* Centering the container (flexbox for centering) */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('https://genotipia.com/wp-content/uploads/2020/04/Netflix-Background-prueba-1.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;     /* Vertically center the content */
+}
+
+/* Dark overlay for the background */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+/* Centered login form with transparent background and shiny effect */
+.login-box {
+    position: relative;
+    background: rgba(0, 0, 0, 0.75); /* Increased transparency */
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 2;
+    
+    /* Shiny/glossy effect */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.3));
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Styling for the Sign In heading */
+.sign-in-text {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* Input fields */
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #e50914;
+    outline: none;
+}
+
+/* Sign In button */
+.btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #f40612;
+}
+
+/* Forgot Password link */
+.forgot-password {
+    margin-top: 10px;
+}
+
+.forgot-password a {
+    color: #b3b3b3;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Sign-up section */
+.sign-up {
+    margin-top: 20px;
+    color: white;
+}
+
+.sign-up a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+.sign-up a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 500px) {
+    .login-box {
+        padding: 20px;
+        max-width: 90%;
+        
+    }
+
+    .sign-in-text {
+        font-size: 28px;
+    }
+
+    input, .btn {
+        font-size: 14px;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay">
+            <div class="login-box">
+                <h1 class="sign-in-text"> Sign in</h1>
+                <form id="loginForm">
+                    <input type="email" placeholder="Email or Phone Number" id="email" required>
+                    <input type="password" placeholder="Password" id="password" required>
+                    <button type="submit" class="btn">Sign In</button>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+                <div class="sign-up">
+                    <p>New to Netflix? <a href="#">Sign up now</a>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Login form validation
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Validate the fields
+    if (email && password) {
+        alert("Login Successful!");
+        // Here you can redirect the user to another page or perform API calls.
+    } else {
+        alert("Please fill in both fields.");
+    }
+});
+
+    </script>
+</body>
+</html>

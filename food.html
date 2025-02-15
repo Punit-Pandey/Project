@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foodie - Food Delivery</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <style>
+    /* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f7f7f7;
+  color: #333;
+}
+
+/* Header Section */
+.header {
+  background-color: #ff5733;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.header-actions input {
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  width: 250px;
+}
+
+.header-actions button {
+  padding: 10px 15px;
+  border-radius: 25px;
+  background-color: white;
+  color: #ff5733;
+  border: none;
+  cursor: pointer;
+}
+
+.header-actions button:hover {
+  background-color: #e04e29;
+}
+
+.cart-icon {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+/* Navigation Bar */
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar a:hover {
+  color: #ff5733;
+}
+
+/* Main Content Section */
+.main-content {
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* Food Categories Section */
+.food-categories {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5 columns per row */
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.category-card {
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.category-card h4 {
+  padding: 15px;
+  background-color: #ff5733;
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 30px 0;
+  margin-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left {
+  width: 50%;
+}
+
+.footer-left h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.footer-left p {
+  font-size: 16px;
+}
+
+.footer-right {
+  width: 50%;
+  text-align: center;
+}
+
+.footer-right p {
+  margin-bottom: 10px;
+}
+
+.social-icons i {
+  font-size: 25px;
+  margin: 0 15px;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #ff5733;
+}
+.filter-dropdown {
+      background-color: #ff5733;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .filter-dropdown:hover {
+      background-color: #e04e29;
+    }
+
+    /* Adding some margin to separate filter from navbar links */
+    .filter-container {
+      margin-left: 20px;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Header Section -->
+  <header class="header">
+    <div class="logo">Foodie</div>
+    <div class="header-actions">
+      <input type="text" placeholder="Search for food, restaurants...">
+      <button>Search</button>
+      <i class="fas fa-shopping-cart cart-icon"></i>
+    </div>
+  </header>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Cuisines</a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="#">Restaurants</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="filter-container">
+      <select class="filter-dropdown">
+        <option value="all">all</option>
+        <option value="veg">Veg</option>
+        <option value="non-veg">Non-Veg</option>
+      </select>
+    </div>
+  </nav>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <h2>Explore Categories</h2>
+
+    <div class="food-categories">
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP._QSGAZEOh9CcZwtpbtFToAHaFj?w=238&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pizza">
+        <h4>Pizza</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.Rzad6Ueik6hqRCSM7zbi3AHaHa?w=175&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Burgers">
+        <h4>Burgers</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.Uoprbskm4iO3mT-jBrmC9QHaHa?w=207&h=207&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Desserts">
+        <h4>Desserts</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://ts3.mm.bing.net/th?id=OIP.beJYJl2UgX1U6tULmBQ1hQHaHa&pid=15.1" alt="Sushi">
+        <h4>Sushi</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.MiAGrYafshORM2n_HLu4swHaHa?w=208&h=208&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Pasta">
+        <h4>Pasta</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.VHxE0gj6vJcGxjefRhpY8AHaHp?w=177&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Dal tadka">
+      <h4>Dal tadka</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://www.acouplecooks.com/wp-content/uploads/2019/05/Chopped-Salad-001_1.jpg" alt="Salads">
+        <h4>Salads</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.GqUvr8wmgKYa7LL8YpnGMAHaE7?w=230&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Fries">
+        <h4>Fries</h4>
+      </div>
+      <div class="category-card">
+        <img src="https://th.bing.com/th/id/OIP.7ApA5UdYaDZlJ4Qp2uxlNwHaLH?w=116&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sandwiches">
+        <h4>Sandwiches</h4>
+      </div>
+      
+      <div class="category-card">
+        <img src="https://ireallylikefood.com/wp-content/uploads/2020/03/easy-breakfast-sides.jpg" alt="Breakfast">
+        <h4>Breakfast</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>Foodie</h3>
+        <p>Your favorite food delivered at your doorstep!</p>
+      </div>
+      <div class="footer-right">
+        <p>Follow us for yummy deals and more!</p>
+          
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
